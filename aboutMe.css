@@ -140,7 +140,7 @@ body.is-loaded .notion-banner {
 }
 
 .vision-card {
-  min-height: 260px;
+  min-height: 290px;
   padding: 26px;
   border: 1px solid var(--line);
   border-radius: 22px;
@@ -164,9 +164,128 @@ body.is-loaded .notion-banner {
   margin: 18px 0 14px;
 }
 
+.vision-card:nth-of-type(3) h3 {
+  margin: 18px 0 26px;
+}
+
 .vision-card p {
   margin: 0;
   line-height: 1.85;
+}
+
+.vision-body {
+  min-height: 184px;
+  display: grid;
+  align-items: center;
+}
+
+.vision-statement {
+  margin-top: 14%;
+  min-height: 168px;
+  display: grid;
+  align-content: center;
+  padding: 18px;
+  border-left: 3px solid rgba(65, 111, 94, 0.28);
+  background: rgba(238, 248, 243, 0.42);
+}
+
+.vision-statement p {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.85;
+}
+
+.okr-block {
+  display: grid;
+  gap: 30px;
+}
+
+.okr-objective,
+.okr-results div {
+  padding: 10px 12px;
+  border-left: 3px solid rgba(65, 111, 94, 0.28);
+  background: rgba(238, 248, 243, 0.42);
+}
+
+.okr-objective {
+  margin-top: 3%;
+  background: rgba(224, 239, 232, 0.72);
+}
+
+.okr-results {
+  display: grid;
+  gap: 10px;
+}
+
+.okr-results div {
+  background: rgba(238, 248, 243, 0.42);
+}
+
+.okr-block strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--deep);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.smart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.smart-table th,
+.smart-table td {
+  padding: 25px 0;
+  text-align: left;
+  vertical-align: top;
+  border: 0;
+}
+
+.smart-table th {
+  width: 75px;
+  color: var(--deep);
+  font-weight: 800;
+  text-align: center;
+  /* padding-left: 8px; */
+}
+
+.smart-table th + td {
+  padding-left: 14px;
+  border-left: 1px solid rgba(65, 111, 94, 0.18);
+}
+
+.smart-table tr + tr th,
+.smart-table tr + tr td {
+  border-top: 1px solid rgba(65, 111, 94, 0.18);
+}
+
+.smart-table .bolding {
+  padding-top: 7%;
+  font-weight: 700;
+}
+
+.smart-table th strong,
+.smart-table th em {
+  display: block;
+}
+
+.smart-table th strong {
+  padding-left: 1px;
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.smart-table th em {
+  margin-top: 3px;
+  color: rgba(65, 111, 94, 0.68);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.25;
 }
 
 @keyframes caretBlink {
