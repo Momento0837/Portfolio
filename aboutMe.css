@@ -1,0 +1,197 @@
+body {
+  background:
+    linear-gradient(90deg, var(--mint) 0 39px, transparent 39px 55px, var(--mint) 55px 76px, transparent 76px 92px, var(--mint) 92px 100%) top / 100% 58px no-repeat,
+    var(--cream);
+}
+
+.notion-banner-stage {
+  min-height: 270px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(118, 172, 147, 0.94), rgba(151, 195, 174, 0.9));
+}
+
+.notion-banner {
+  min-height: 270px;
+  display: grid;
+  place-items: center;
+  padding: 84px 24px 58px;
+  background: linear-gradient(135deg, rgba(118, 172, 147, 0.94), rgba(151, 195, 174, 0.9));
+  text-align: center;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+body.is-loaded .notion-banner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notion-banner p {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(34px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.2;
+  text-shadow: 0 8px 24px rgba(38, 58, 50, 0.16);
+}
+
+.typewriter {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.typewriter.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.typewriter::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  margin-left: 6px;
+  background: rgba(255, 255, 255, 0.78);
+  vertical-align: -0.08em;
+  animation: caretBlink 0.8s steps(1) infinite;
+}
+
+.typewriter.is-complete::after {
+  opacity: 0;
+  animation: none;
+}
+
+.trail-copy {
+  max-width: 760px;
+  margin: 0;
+  line-height: 1.9;
+}
+
+.attitude-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.attitude-list li {
+  display: grid;
+  gap: 8px;
+  padding: 16px 18px;
+  border-left: 3px solid rgba(65, 111, 94, 0.28);
+  background: rgba(238, 248, 243, 0.42);
+}
+
+.attitude-list strong {
+  color: var(--deep);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.attitude-list span {
+  color: var(--text);
+  line-height: 1.75;
+}
+
+.about-page {
+  min-height: auto;
+  padding-bottom: clamp(22px, 3.3vw, 46px);
+}
+
+.statement-section {
+  margin-top: 0;
+  padding-top: clamp(14px, 2vw, 28px);
+}
+
+.statement-paper {
+  min-height: 520px;
+  padding: clamp(28px, 5vw, 54px);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.statement-paper p {
+  max-width: 860px;
+  margin: 0 auto 22px;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 2;
+}
+
+.statement-paper p:last-child {
+  margin-bottom: 0;
+}
+
+.vision-section {
+  padding-top: clamp(14px, 2vw, 28px);
+  padding-bottom: clamp(22px, 3.3vw, 46px);
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.vision-card {
+  min-height: 260px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.vision-card > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(238, 248, 243, 0.9);
+  color: var(--deep);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.vision-card h3 {
+  margin: 18px 0 14px;
+}
+
+.vision-card p {
+  margin: 0;
+  line-height: 1.85;
+}
+
+@keyframes caretBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    background:
+      linear-gradient(180deg, var(--mint) 0 56px, transparent 56px 100%) top / 100% 56px no-repeat,
+      var(--cream);
+  }
+
+  .about-page {
+    padding-bottom: 22px;
+  }
+
+  .statement-section {
+    padding-top: 16px;
+  }
+
+  .attitude-list,
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+}
