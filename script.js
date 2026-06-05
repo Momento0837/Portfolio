@@ -6,12 +6,121 @@ const modal = document.querySelector('.modal');
 const detailButtons = document.querySelectorAll('.detail-btn');
 const modalClose = document.querySelector('.modal-close');
 const contactShine = document.querySelector('.contact-shine');
+const introBanner = document.querySelector('.intro-banner');
+const profileSection = document.querySelector('.portfolio-board');
+let introTouchStartY = 0;
+let isIntroScrollJumping = false;
+
+if (introBanner) {
+  document.body.classList.add('has-intro');
+}
 
 window.addEventListener('load', () => {
   document.body.classList.add('is-loaded');
   animateSkillRings();
   runTypewriter();
+  runIntroBannerTypewriter();
 });
+
+if (introBanner && profileSection) {
+  window.addEventListener('wheel', handleIntroWheel, { passive: false });
+  window.addEventListener('touchstart', handleIntroTouchStart, { passive: true });
+  window.addEventListener('touchmove', handleIntroTouchMove, { passive: false });
+  window.addEventListener('scroll', revealIntroControlsOnScroll, { passive: true });
+}
+
+function showIntroControls() {
+  document.body.classList.add('intro-ready');
+}
+
+function revealIntroControlsOnScroll() {
+  if (window.scrollY > 0) {
+    showIntroControls();
+  }
+}
+
+function getHeaderHeight() {
+  return Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 0;
+}
+
+function isInsideIntro() {
+  return window.scrollY < introBanner.offsetHeight - getHeaderHeight() - 10;
+}
+
+function isIntroVisible() {
+  return isIntroVisibleAt(window.scrollY);
+}
+
+function isIntroVisibleAt(scrollY) {
+  const rect = introBanner.getBoundingClientRect();
+  const predictedTop = rect.top + window.scrollY - scrollY;
+  const predictedBottom = predictedTop + introBanner.offsetHeight;
+  return predictedBottom > getHeaderHeight() && predictedTop < window.innerHeight;
+}
+
+function scrollToIntroTop(force = false) {
+  if (isIntroScrollJumping || window.scrollY <= 0 || (!force && !isIntroVisible())) return;
+
+  isIntroScrollJumping = true;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  window.setTimeout(() => {
+    isIntroScrollJumping = false;
+  }, 700);
+}
+
+function scrollToProfileSection() {
+  if (isIntroScrollJumping || !isInsideIntro()) return;
+
+  isIntroScrollJumping = true;
+  const targetTop = profileSection.getBoundingClientRect().top + window.scrollY - getHeaderHeight();
+  window.scrollTo({ top: targetTop, behavior: 'smooth' });
+
+  window.setTimeout(() => {
+    isIntroScrollJumping = false;
+  }, 700);
+}
+
+function handleIntroWheel(event) {
+  showIntroControls();
+
+  const nextScrollY = Math.max(0, window.scrollY + event.deltaY);
+
+  if (event.deltaY < 0 && isIntroVisibleAt(nextScrollY)) {
+    event.preventDefault();
+    scrollToIntroTop(true);
+    return;
+  }
+
+  if (event.deltaY <= 0 || !isInsideIntro()) return;
+
+  event.preventDefault();
+  scrollToProfileSection();
+}
+
+function handleIntroTouchStart(event) {
+  introTouchStartY = event.touches[0].clientY;
+}
+
+function handleIntroTouchMove(event) {
+  showIntroControls();
+
+  const currentY = event.touches[0].clientY;
+  const isSwipingDownPage = introTouchStartY - currentY > 12;
+  const isSwipingUpPage = currentY - introTouchStartY > 12;
+  const nextScrollY = Math.max(0, window.scrollY - (currentY - introTouchStartY));
+
+  if (isSwipingUpPage && isIntroVisibleAt(nextScrollY)) {
+    event.preventDefault();
+    scrollToIntroTop(true);
+    return;
+  }
+
+  if (!isSwipingDownPage || !isInsideIntro()) return;
+
+  event.preventDefault();
+  scrollToProfileSection();
+}
 
 function runTypewriter() {
   const target = document.querySelector('.typewriter');
@@ -37,6 +146,95 @@ function runTypewriter() {
         }, 450);
       }
     }, 170);
+  });
+}
+
+async function runIntroBannerTypewriter() {
+  const lines = document.querySelectorAll('.intro-banner__content p, .intro-banner__content h1');
+  if (!lines.length) return;
+
+  await Promise.all(Array.from(lines, (line) => {
+    if (line.tagName === 'H1') {
+      return revealTextCharacters(line, 95);
+    }
+
+    return typeTextLine(line, 125);
+  }));
+
+  showIntroControls();
+}
+
+function typeTextLine(target, speed) {
+  return new Promise((resolve) => {
+    const text = target.dataset.text || target.textContent.trim();
+    const characters = Array.from(text);
+    let index = 0;
+
+    target.dataset.text = text;
+    target.textContent = '';
+    target.classList.add('intro-text-line');
+    target.classList.remove('is-complete');
+    target.classList.remove('is-active');
+    target.classList.remove('is-visible');
+
+    requestAnimationFrame(() => {
+      target.classList.add('is-visible');
+      target.classList.add('is-active');
+
+      const timer = setInterval(() => {
+        target.textContent += characters[index] || '';
+        index += 1;
+
+        if (index >= characters.length) {
+          clearInterval(timer);
+          target.classList.remove('is-active');
+          target.classList.add('is-complete');
+          resolve();
+        }
+      }, speed);
+    });
+  });
+}
+
+function revealTextCharacters(target, speed) {
+  return new Promise((resolve) => {
+    const text = target.dataset.text || target.textContent.trim();
+    const characters = Array.from(text);
+    let index = 0;
+
+    target.dataset.text = text;
+    target.textContent = '';
+    target.classList.add('intro-text-line');
+    target.classList.remove('is-complete');
+    target.classList.remove('is-active');
+    target.classList.remove('is-visible');
+
+    characters.forEach((value) => {
+      const character = document.createElement('span');
+      character.className = 'intro-char';
+      character.textContent = value === ' ' ? '\u00a0' : value;
+      target.appendChild(character);
+    });
+
+    const characterElements = target.querySelectorAll('.intro-char');
+
+    requestAnimationFrame(() => {
+      target.classList.add('is-visible');
+
+      const timer = setInterval(() => {
+        characterElements[index].classList.add('is-visible');
+        index += 1;
+
+        if (index >= characterElements.length) {
+          clearInterval(timer);
+          window.setTimeout(() => {
+            target.classList.remove('is-active');
+            target.classList.add('is-complete');
+            resolve();
+          }, 360);
+        }
+      }, speed);
+    });
   });
 }
 
