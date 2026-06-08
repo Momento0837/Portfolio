@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홍누리 Portfolio | 협업 프로젝트</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="coopProject.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav">
+      <a href="index.html" class="logo">NURI<span>.</span>PORTFOLIO</a>
+      <button class="menu-toggle" type="button" aria-label="메뉴 열기">Menu</button>
+      <ul class="nav-list">
+        <li><a href="aboutMe.html" class="about-link">ABOUT ME</a></li>
+        <li><a href="index.html#featured">대표 프로젝트</a></li>
+        <li><a href="coopProject.html">협업 프로젝트</a></li>
+        <li><a href="solo.html">개인 프로젝트</a></li>
+        <li><a href="media.html">영상 및 디자인</a></li>
+        <li><a href="contact.html" class="contact-shine">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="coop-hero">
+      <div class="section-inner coop-hero__inner">
+        <p class="eyebrow reveal">Team Project</p>
+        <h1 class="reveal">협업 프로젝트</h1>
+        <p class="coop-lead reveal">
+          팀 안에서 역할을 나누고, 기획과 디자인 방향을 조율하며 결과물을 완성한 프로젝트 기록입니다.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-inner coop-overview">
+      <article class="coop-summary reveal">
+        <div>
+          <p class="eyebrow">Project Archive</p>
+          <h2>중간고사 발표 자료 기반 협업 프로젝트</h2>
+        </div>
+        <p>
+          폴더에 포함된 발표 PDF를 바탕으로 프로젝트의 흐름, 역할, 산출물을 한 페이지에서 확인할 수 있도록 정리했습니다.
+          협업 과정에서 필요한 자료 정리, 화면 구성, 발표 자료화까지 이어지는 작업을 중심으로 보여줍니다.
+        </p>
+      </article>
+
+      <div class="coop-grid">
+        <article class="coop-card reveal">
+          <span>01</span>
+          <h3>기획 정리</h3>
+          <p>프로젝트의 주제와 목적을 팀원과 공유하고, 필요한 기능과 표현 방향을 정리했습니다.</p>
+        </article>
+        <article class="coop-card reveal">
+          <span>02</span>
+          <h3>역할 분담</h3>
+          <p>각자 맡은 작업 범위를 나누고, 진행 상황을 맞춰 보며 하나의 결과물로 연결했습니다.</p>
+        </article>
+        <article class="coop-card reveal">
+          <span>03</span>
+          <h3>디자인 구성</h3>
+          <p>자료의 흐름이 잘 보이도록 화면 밀도, 시각 요소, 발표용 페이지 구성을 다듬었습니다.</p>
+        </article>
+        <article class="coop-card reveal">
+          <span>04</span>
+          <h3>발표 자료화</h3>
+          <p>작업 과정을 설명 가능한 형태로 정리하고, 결과물을 PDF 발표 자료로 완성했습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-inner coop-detail">
+      <div class="coop-panel reveal">
+        <p class="eyebrow">Role</p>
+        <h2>협업 안에서의 작업 방식</h2>
+        <ul class="clean-list">
+          <li>
+            <strong>공통 목표 확인</strong>
+            <span>팀원과 같은 방향을 보고 작업할 수 있도록 주제, 일정, 산출물 기준을 먼저 맞췄습니다.</span>
+          </li>
+          <li>
+            <strong>화면과 자료의 연결</strong>
+            <span>단순히 보기 좋은 페이지보다, 발표 흐름 안에서 자연스럽게 이해되는 구성을 우선했습니다.</span>
+          </li>
+          <li>
+            <strong>피드백 반영</strong>
+            <span>팀 작업 중 나온 의견을 반영해 문장, 배치, 시각적 강조점을 계속 조정했습니다.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="coop-panel coop-pdf reveal">
+        <div class="coop-panel__title">
+          <div>
+            <p class="eyebrow">Reference PDF</p>
+            <h2>프로젝트 발표 자료</h2>
+          </div>
+          <a class="btn primary" href="2025101518_홍누리_7주차_중간고사PPT.pdf" target="_blank" rel="noopener">PDF 열기</a>
+        </div>
+        <object class="coop-pdf__viewer" data="2025101518_홍누리_7주차_중간고사PPT.pdf" type="application/pdf">
+          <p>PDF 미리보기를 표시할 수 없습니다.</p>
+        </object>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-icons">
+      <button class="footer-icon copy-email" type="button" data-email="your-email@example.com" aria-label="이메일 복사"></button>
+    </div>
+    <p class="copy-message" aria-live="polite"></p>
+    <p class="copyright">© 2026 Hong Nuri Portfolio. Built with HTML, CSS, JavaScript.</p>
+  </footer>
+
+  <div class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" type="button" aria-label="닫기">×</button>
+      <h2>협업 프로젝트</h2>
+      <p>협업 프로젝트의 상세 내용을 추가로 정리할 수 있는 영역입니다.</p>
+    </div>
+  </div>
+</body>
+</html>
