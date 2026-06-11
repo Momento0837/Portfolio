@@ -116,6 +116,80 @@ body.is-loaded .notion-banner {
   box-shadow: var(--shadow);
 }
 
+.swot-table-wrap {
+  max-width: 920px;
+  margin: 0 auto 42px;
+  overflow-x: auto;
+}
+
+.swot-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--text);
+  table-layout: fixed;
+}
+
+.swot-table caption {
+  margin-bottom: 16px;
+  color: var(--deep);
+  font-size: 22px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.swot-table th,
+.swot-table td {
+  padding: 22px;
+  border-right: 1px solid rgba(65, 111, 94, 0.18);
+  border-bottom: 1px solid rgba(65, 111, 94, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  text-align: left;
+  vertical-align: top;
+}
+
+.swot-table thead th {
+  background: rgba(238, 248, 243, 0.95);
+  color: var(--deep);
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.swot-table th:first-child {
+  width: 15%;
+}
+
+.swot-table tbody th {
+  background: rgba(238, 248, 243, 0.72);
+  color: var(--deep);
+  font-weight: 800;
+}
+
+.swot-table tr > *:last-child {
+  border-right: 0;
+}
+
+.swot-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.swot-table strong,
+.swot-table span {
+  display: block;
+}
+
+.swot-table strong {
+  margin-bottom: 8px;
+  color: var(--dark);
+  font-size: 18px;
+}
+
+.swot-table span {
+  line-height: 1.75;
+}
+
 .statement-paper p {
   max-width: 860px;
   margin: 0 auto 22px;

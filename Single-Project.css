@@ -72,7 +72,7 @@
 .single-overview {
   display: grid;
   gap: 28px;
-  margin: 0px auto 50px;
+  margin: 0px auto 0px;
 }
 
 .single-summary {
@@ -80,7 +80,7 @@
   grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1fr);
   gap: 28px;
   align-items: start;
-  padding: 100px 32px;
+  padding: 50px 32px;
   border: 1px solid var(--line);
   border-radius: 0px;
   background: rgba(255, 255, 255, 0.92);
@@ -158,7 +158,7 @@
   border-right: var(--single-trail-width) dashed rgba(65, 111, 94, 0.16);
   border-bottom: var(--single-trail-width) dashed rgba(65, 111, 94, 0.16);
   border-radius: 0 999px 999px 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 50% calc(100% - 2px), 0 calc(100% - 2px));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%, 70% calc(100% - 2px), 0 calc(100% - 2px));
 }
 
 .single-step--right:not(:last-child)::after {
@@ -168,7 +168,7 @@
   border-left: var(--single-trail-width) dashed rgba(65, 111, 94, 0.16);
   border-bottom: var(--single-trail-width) dashed rgba(65, 111, 94, 0.16);
   border-radius: 999px 0 0 999px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2px), 50% calc(100% - 2px), 50% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2px), 30% calc(100% - 2px), 30% 100%, 0 100%);
 }
 
 .single-panel {
