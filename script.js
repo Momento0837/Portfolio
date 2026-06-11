@@ -8,6 +8,7 @@ const modalClose = document.querySelector('.modal-close');
 const contactShine = document.querySelector('.contact-shine');
 const introBanner = document.querySelector('.intro-banner');
 const profileSection = document.querySelector('.portfolio-board');
+const introScrollTarget = profileSection || document.querySelector('main > *');
 const pageLoader = document.querySelector('.page-loader');
 const pageLoaderFill = document.querySelector('.page-loader__fill');
 const pageLoaderStatus = document.querySelector('.page-loader__status');
@@ -30,7 +31,7 @@ window.addEventListener('load', () => {
   startPageAnimations();
 });
 
-if (introBanner && profileSection) {
+if (introBanner && introScrollTarget) {
   window.addEventListener('wheel', handleIntroWheel, { passive: false });
   window.addEventListener('touchstart', handleIntroTouchStart, { passive: true });
   window.addEventListener('touchmove', handleIntroTouchMove, { passive: false });
@@ -81,7 +82,7 @@ function scrollToProfileSection() {
   if (isIntroScrollJumping || !isInsideIntro()) return;
 
   isIntroScrollJumping = true;
-  const targetTop = profileSection.getBoundingClientRect().top + window.scrollY - getHeaderHeight();
+  const targetTop = introScrollTarget.getBoundingClientRect().top + window.scrollY - getHeaderHeight();
   window.scrollTo({ top: targetTop, behavior: 'smooth' });
 
   window.setTimeout(() => {
@@ -410,9 +411,11 @@ function animateSkillRings() {
   });
 }
 
-menuToggle.addEventListener('click', () => {
-  navList.classList.toggle('is-open');
-});
+if (menuToggle && navList) {
+  menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('is-open');
+  });
+}
 
 document.querySelectorAll('.nav-list a').forEach((link) => {
   link.addEventListener('click', () => {
@@ -420,15 +423,18 @@ document.querySelectorAll('.nav-list a').forEach((link) => {
   });
 });
 
-contactShine.addEventListener('pointermove', (event) => {
-  const rect = contactShine.getBoundingClientRect();
-  const x = ((event.clientX - rect.left) / rect.width) * 100;
-  const y = ((event.clientY - rect.top) / rect.height) * 100;
+if (contactShine) {
+  contactShine.addEventListener('pointermove', (event) => {
+    const rect = contactShine.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
 
-  contactShine.style.setProperty('--shine-x', `${x}%`);
-  contactShine.style.setProperty('--shine-y', `${y}%`);
-});
+    contactShine.style.setProperty('--shine-x', `${x}%`);
+    contactShine.style.setProperty('--shine-y', `${y}%`);
+  });
+}
 
+if (copyButton && copyMessage) {
 copyButton.addEventListener('click', async () => {
   const email = copyButton.dataset.email;
 
@@ -439,10 +445,13 @@ copyButton.addEventListener('click', async () => {
     showToast('복사에 실패했습니다. 브라우저 권한을 확인해주세요.');
   }
 });
+}
 
 let toastTimer;
 
 function showToast(message) {
+  if (!copyMessage) return;
+
   copyMessage.textContent = message;
   copyMessage.classList.add('is-visible');
   clearTimeout(toastTimer);
@@ -470,11 +479,15 @@ function setupRevealObserver() {
 }
 
 const openModal = () => {
+  if (!modal) return;
+
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden', 'false');
 };
 
 const closeModal = () => {
+  if (!modal) return;
+
   modal.classList.remove('is-open');
   modal.setAttribute('aria-hidden', 'true');
 };
@@ -483,13 +496,17 @@ detailButtons.forEach((button) => {
   button.addEventListener('click', openModal);
 });
 
-modalClose.addEventListener('click', closeModal);
+if (modalClose) {
+  modalClose.addEventListener('click', closeModal);
+}
 
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
+if (modal) {
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+}
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
