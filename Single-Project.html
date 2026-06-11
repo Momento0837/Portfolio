@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hong Nuri Portfolio | 개인 프로젝트</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Single-Project.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-loader page-loader--message" aria-hidden="true">
+    <p class="page-loader__message" data-loader-text="개인 퀘스트 구역입니다."></p>
+  </div>
+
+  <header class="site-header" id="top">
+    <nav class="nav">
+      <a href="index.html" class="logo">NURI<span>.</span>PORTFOLIO</a>
+      <button class="menu-toggle" type="button" aria-label="메뉴 열기">Menu</button>
+      <ul class="nav-list">
+        <li><a href="aboutMe.html" class="about-link">ABOUT ME</a></li>
+        <li><a href="index.html#featured">대표 프로젝트</a></li>
+        <li><a href="coopProject.html">협업 프로젝트</a></li>
+        <li><a href="Single-Project.html">개인 프로젝트</a></li>
+        <li><a href="Edit-Design.html">영상 및 디자인</a></li>
+        <li><a href="contact.html" class="contact-shine">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="single-hero">
+      <div class="section-inner single-hero__inner">
+        <div class="single-hero-video">
+          <iframe
+            class="single-hero-video__embed"
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="개인 프로젝트 메인 영상"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-inner single-overview">
+      <article class="single-summary reveal">
+        <div>
+          <p class="eyebrow">Overview</p>
+          <h2>개인 프로젝트 개요</h2>
+        </div>
+        <div class="single-summary__body">
+          <div class="single-summary__tags" aria-label="project tags">
+            <span class="single-summary__tag">TAG 01</span>
+            <span class="single-summary__tag">TAG 02</span>
+            <span class="single-summary__tag">TAG 03</span>
+          </div>
+          <p>
+            이 페이지는 하나의 개인 프로젝트가 어떤 순서로 기획되고, 설계되고, 구현되고, 보정되고,
+            정리되었는지를 단계별로 보여주는 구성입니다. 아래 스텝카드는 작업 흐름을 빠르게 읽을 수 있도록
+            발자취처럼 정리한 카드들이고, 마지막 결과 카드에서는 완성된 결과를 대표 프로젝트 형식으로 요약합니다.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section-inner single-detail">
+      <article class="single-step single-step--left reveal">
+        <div class="single-panel single-showcase">
+          <div class="single-showcase__copyblock">
+            <p class="eyebrow">Step 01</p>
+            <h3 class="single-showcase__title">프로젝트 개요</h3>
+            <p class="single-showcase__copy">프로젝트 제목, 간단한 소개, 기획 의도를 한 번에 보여주는 단계입니다.</p>
+          </div>
+          <div class="single-showcase__photo"><span>PHOTO SPACE</span></div>
+        </div>
+      </article>
+
+      <article class="single-step single-step--right reveal">
+        <div class="single-panel single-showcase">
+          <div class="single-showcase__copyblock">
+            <p class="eyebrow">Step 02</p>
+            <h3 class="single-showcase__title">화면 설계</h3>
+            <p class="single-showcase__copy">화면 배치, 인터페이스 구조, 사용자 흐름 같은 시각 자료를 압축 정리하는 단계입니다.</p>
+          </div>
+          <div class="single-showcase__photo"><span>PHOTO SPACE</span></div>
+        </div>
+      </article>
+
+      <article class="single-step single-step--left reveal">
+        <div class="single-panel single-showcase">
+          <div class="single-showcase__copyblock">
+            <p class="eyebrow">Step 03</p>
+            <h3 class="single-showcase__title">기능 구현</h3>
+            <p class="single-showcase__copy">실제 구현 화면과 핵심 기능 설명, 테스트 장면 등을 정리하는 단계입니다.</p>
+          </div>
+          <div class="single-showcase__photo"><span>PHOTO SPACE</span></div>
+        </div>
+      </article>
+
+      <article class="single-step single-step--right reveal">
+        <div class="single-panel single-showcase">
+          <div class="single-showcase__copyblock">
+            <p class="eyebrow">Step 04</p>
+            <h3 class="single-showcase__title">사용자 보정</h3>
+            <p class="single-showcase__copy">수정 전후 비교, 시각 보강 포인트, 사용자 경험 개선 내용을 기록하는 단계입니다.</p>
+          </div>
+          <div class="single-showcase__photo"><span>PHOTO SPACE</span></div>
+        </div>
+      </article>
+
+      <article class="single-step single-featured-step reveal">
+        <article class="featured-card single-featured">
+          <div class="project-preview">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID"
+              title="개인 프로젝트 최종 결과 영상"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="project-content">
+            <div class="chip-row">
+              <span>개인 프로젝트</span>
+              <span>최종 결과</span>
+              <span>UI Design</span>
+              <span>Development</span>
+            </div>
+            <h3>최종 결과 정리</h3>
+            <p>
+              마지막 단계는 메인 페이지의 대표 프로젝트 카드 형식을 그대로 가져와, 완성된 결과와 핵심 내용을 한 번에
+              보여주는 구간입니다. 프로젝트 소개, 주요 기능, 회고 포인트를 이 카드 안에 정리하면 됩니다.
+            </p>
+            <dl class="project-meta">
+              <div>
+                <dt>기간</dt>
+                <dd>2026.00 - 2026.00</dd>
+              </div>
+              <div>
+                <dt>역할</dt>
+                <dd>기획 / 디자인 / 구현</dd>
+              </div>
+              <div>
+                <dt>기여도</dt>
+                <dd>100%</dd>
+              </div>
+            </dl>
+            <button class="btn primary detail-btn" type="button" data-project="single-featured">자세히 보기</button>
+          </div>
+        </article>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-icons">
+      <button class="footer-icon copy-email" type="button" data-email="your-email@example.com" aria-label="이메일 복사"></button>
+    </div>
+    <p class="copy-message" aria-live="polite"></p>
+    <p class="copyright">© 2026 Hong Nuri Portfolio. Built with HTML, CSS, JavaScript.</p>
+  </footer>
+
+  <div class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="닫기">×</button>
+      <h2 id="modal-title">개인 프로젝트</h2>
+      <p>개인 프로젝트의 상세 내용을 추가로 정리할 수 있는 영역입니다.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@import url('./coopProject.css');
+
+body.edit-design-page.has-intro {
+  padding-top: 0;
+}
+
+body.edit-design-page.has-intro:not(.intro-ready) .site-header {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+body.edit-design-page .intro-banner {
+  min-height: 100vh;
+}
+
+body.edit-design-page .coop-overview {
+  padding-top: 66px;
+}

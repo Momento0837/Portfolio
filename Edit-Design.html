@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hong Nuri Portfolio | 협업 프로젝트</title>
+  <title>Hong Nuri Portfolio | 영상 및 디자인</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="coopProject.css" />
+  <link rel="stylesheet" href="Edit-Design.css" />
   <script src="script.js" defer></script>
 </head>
-<body>
-  <div class="page-loader" aria-hidden="true">
-    <div class="page-loader__status" aria-live="polite">30</div>
-    <div class="page-loader__bar">
-      <span class="page-loader__fill" style="width: 30%;"></span>
+<body class="edit-design-page">
+  <section class="intro-banner" aria-label="Edit and design introduction">
+    <div class="intro-banner__content">
+      <p>[ :D ]</p>
+      <h1>상상 속 세계를 현실로 연결합니다</h1>
     </div>
-  </div>
+  </section>
 
   <header class="site-header" id="top">
     <nav class="nav">
@@ -32,36 +32,27 @@
   </header>
 
   <main>
-    <section class="coop-hero">
-      <div class="section-inner coop-hero__inner">
-        <p
-          class="coop-hero__message typewriter"
-          data-text="협동 퀘스트 구역입니다."
-        ></p>
-      </div>
-    </section>
-
     <section class="section-inner coop-overview">
       <div class="coop-grid">
         <article class="coop-card reveal">
           <span>01</span>
           <h3>기획 정리</h3>
-          <p>프로젝트의 목표와 전달 기능을 먼저 정리하고, 팀원들과 같은 방향으로 작업할 수 있도록 기준을 맞춥니다.</p>
+          <p>프로젝트의 목표와 전달 포인트를 먼저 정리하고, 전체 결과물이 같은 방향으로 모이도록 기준을 맞춥니다.</p>
         </article>
         <article class="coop-card reveal">
           <span>02</span>
-          <h3>역할 분담</h3>
-          <p>각자 맡은 영역을 나누고 진행 상황을 공유하며, 하나의 결과물로 자연스럽게 연결되도록 조율했습니다.</p>
+          <h3>분업 설계</h3>
+          <p>각자 맡은 영역과 작업 흐름을 구분하고, 필요한 자료와 일정이 자연스럽게 이어지도록 조정합니다.</p>
         </article>
         <article class="coop-card reveal">
           <span>03</span>
-          <h3>화면 구성</h3>
-          <p>내용이 잘 보이도록 시각 요소와 발표 흐름을 함께 고려해 화면과 자료 구성을 정리했습니다.</p>
+          <h3>시각 구성</h3>
+          <p>화면 구도와 배치, 색상과 자료 흐름을 정리해 빠르게 이해되는 시각 구조를 만듭니다.</p>
         </article>
         <article class="coop-card reveal">
           <span>04</span>
-          <h3>발표 자료화</h3>
-          <p>진행 과정과 최종 결과를 이해하기 쉽게 정리해 발표 자료 형태로 완성했습니다.</p>
+          <h3>출력 정리</h3>
+          <p>편집 결과물과 디자인 자료가 발표나 포트폴리오에 바로 들어갈 수 있도록 최종 형태로 다듬습니다.</p>
         </article>
       </div>
     </section>
@@ -74,7 +65,7 @@
           <ul class="clean-list">
             <li>
               <strong>구현 목표</strong>
-              <span>프로젝트에서 구현하려는 핵심 기능과 완성 기준을 짚고 명확하게 정리합니다.</span>
+              <span>영상 및 디자인 작업에서 보여주고 싶은 핵심 장면과 결과 기준을 먼저 정리합니다.</span>
             </li>
           </ul>
         </div>
@@ -100,7 +91,7 @@
             ></iframe>
           </div>
 
-          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>를 실제 영상 ID로만 바꾸면 됩니다.</p>
+          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>만 실제 영상 ID로 바꾸면 됩니다.</p>
         </div>
       </article>
 
@@ -111,7 +102,7 @@
           <ul class="clean-list">
             <li>
               <strong>구현 목표</strong>
-              <span>프로젝트의 핵심 목적과 실제로 보여줄 주요 기능을 중심으로 내용을 요약합니다.</span>
+              <span>프로젝트의 목적과 함께 어떤 장면을 중심으로 보여줄지 간단하게 요약합니다.</span>
             </li>
           </ul>
         </div>
@@ -137,7 +128,7 @@
             ></iframe>
           </div>
 
-          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>를 실제 영상 ID로만 바꾸면 됩니다.</p>
+          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>만 실제 영상 ID로 바꾸면 됩니다.</p>
         </div>
       </article>
 
@@ -148,7 +139,7 @@
           <ul class="clean-list">
             <li>
               <strong>구현 목표</strong>
-              <span>프로젝트에서 해결하고자 했던 부분과 시연 장면을 한 문단으로 정리합니다.</span>
+              <span>작업 과정에서 강조하고 싶은 편집 포인트나 시각 연출 요소를 정리합니다.</span>
             </li>
           </ul>
         </div>
@@ -174,7 +165,7 @@
             ></iframe>
           </div>
 
-          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>를 실제 영상 ID로만 바꾸면 됩니다.</p>
+          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>만 실제 영상 ID로 바꾸면 됩니다.</p>
         </div>
       </article>
 
@@ -185,7 +176,7 @@
           <ul class="clean-list">
             <li>
               <strong>구현 목표</strong>
-              <span>프로젝트에서 실제로 구현한 기능과 완성 기준을 한눈에 읽히도록 적습니다.</span>
+              <span>프로젝트에서 실제로 구현한 장면과 완성 기준을 한눈에 읽히도록 정리합니다.</span>
             </li>
           </ul>
         </div>
@@ -211,7 +202,7 @@
             ></iframe>
           </div>
 
-          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>를 실제 영상 ID로만 바꾸면 됩니다.</p>
+          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>만 실제 영상 ID로 바꾸면 됩니다.</p>
         </div>
       </article>
 
@@ -222,7 +213,7 @@
           <ul class="clean-list">
             <li>
               <strong>구현 목표</strong>
-              <span>프로젝트의 방향성과 핵심 구현 내용을 간단하게 요약해서 보여줍니다.</span>
+              <span>프로젝트의 방향성과 핵심 결과를 짧고 분명하게 마무리하는 구간으로 사용합니다.</span>
             </li>
           </ul>
         </div>
@@ -248,7 +239,7 @@
             ></iframe>
           </div>
 
-          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>를 실제 영상 ID로만 바꾸면 됩니다.</p>
+          <p class="coop-media__hint">유튜브 영상을 사용할 경우 <code>VIDEO_ID</code>만 실제 영상 ID로 바꾸면 됩니다.</p>
         </div>
       </article>
     </section>
@@ -265,8 +256,8 @@
   <div class="modal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal-close" type="button" aria-label="닫기">×</button>
-      <h2 id="modal-title">협업 프로젝트</h2>
-      <p>협업 프로젝트의 상세 내용을 추가로 정리할 수 있는 영역입니다.</p>
+      <h2 id="modal-title">영상 및 디자인</h2>
+      <p>영상 편집과 시각 디자인 작업의 상세 내용을 추가로 정리할 수 있는 영역입니다.</p>
     </div>
   </div>
 </body>
