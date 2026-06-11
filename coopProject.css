@@ -274,7 +274,7 @@ body.page-loader-content-hidden .modal {
   border-right: var(--coop-trail-width) dashed rgba(65, 111, 94, 0.16);
   border-bottom: var(--coop-trail-width) dashed rgba(65, 111, 94, 0.16);
   border-radius: 0 72px 72px 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 50% calc(100% - 2px), 0 calc(100% - 2px));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%, 70% calc(100% - 2px), 0 calc(100% - 2px));
 }
 
 .coop-project--right:not(:last-child)::after {
@@ -284,7 +284,7 @@ body.page-loader-content-hidden .modal {
   border-left: var(--coop-trail-width) dashed rgba(65, 111, 94, 0.16);
   border-bottom: var(--coop-trail-width) dashed rgba(65, 111, 94, 0.16);
   border-radius: 72px 0 0 72px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2px),50% calc(100% - 2px), 50% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2px),30% calc(100% - 2px), 30% 100%, 0 100%);
 }
 
 .coop-panel {
