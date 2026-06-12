@@ -239,9 +239,9 @@ body.page-loader-content-hidden .modal {
 .coop-project {
   position: relative;
   z-index: 1;
-  width: min(66%, 820px);
+  width: min(72%, 920px);
   display: grid;
-  grid-template-columns: minmax(180px, 0.58fr) minmax(0, 1.42fr);
+  grid-template-columns: minmax(234px, 0.68fr) minmax(0, 1.32fr);
   grid-template-areas: "notes media";
   gap: 22px;
   align-items: start;
@@ -249,7 +249,7 @@ body.page-loader-content-hidden .modal {
 
 .coop-project--left {
   justify-self: start;
-  grid-template-columns: minmax(0, 1.42fr) minmax(180px, 0.58fr);
+  grid-template-columns: minmax(0, 1.32fr) minmax(234px, 0.68fr);
   grid-template-areas: "media notes";
 }
 
