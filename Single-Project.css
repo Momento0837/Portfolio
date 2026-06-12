@@ -53,7 +53,7 @@
 }
 
 .single-hero-video {
-  width: min(66.6667%, 640px);
+  width: min(80%, 768px);
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border: 1px solid rgba(65, 111, 94, 0.18);
@@ -77,9 +77,11 @@
 
 .single-summary {
   display: grid;
-  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1fr);
+  grid-template-columns: max-content minmax(0, 1fr);
   gap: 28px;
   align-items: start;
+  width: 90%;
+  justify-self: center;
   padding: 50px 32px;
   border: 1px solid var(--line);
   border-radius: 0px;
@@ -88,6 +90,16 @@
 
 .single-summary h2 {
   margin-bottom: 0;
+}
+
+.single-summary__title-art {
+  width: min(100%, 200px);
+  min-height: clamp(360px, 40vw, 620px);
+  aspect-ratio: 2 / 5;
+  border: 1px dashed rgba(65, 111, 94, 0.24);
+  background:
+    linear-gradient(135deg, rgba(169, 210, 192, 0.16), rgba(255, 255, 255, 0.88)),
+    repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(65, 111, 94, 0.06) 12px, rgba(65, 111, 94, 0.06) 24px);
 }
 
 .single-summary__body {
@@ -111,14 +123,15 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.92);
   color: var(--deep);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
 
 .single-summary__body p {
   margin: 0;
-  line-height: 1.86;
+  font-size: 1.08rem;
+  line-height: 1.92;
 }
 
 .single-detail {
