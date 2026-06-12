@@ -1000,6 +1000,11 @@ h3 {
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
+#footer-icons{
+  width: 70%;
+  height: auto;
+}
+
 .footer-icon:hover {
   transform: translateY(-3px);
   background: rgba(255, 255, 255, 0.2);

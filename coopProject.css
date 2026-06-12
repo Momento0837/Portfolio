@@ -144,6 +144,8 @@ body.page-loader-content-hidden .modal {
 .coop-overview {
   display: grid;
   gap: 28px;
+  padding-top: 60px;
+  padding-bottom: 120px;
 }
 
 .coop-summary {
@@ -162,6 +164,7 @@ body.page-loader-content-hidden .modal {
   margin-bottom: 0;
 }
 
+
 .coop-summary p:last-child {
   margin: 0;
   line-height: 1.92;
@@ -174,13 +177,18 @@ body.page-loader-content-hidden .modal {
 }
 
 .coop-card {
-  min-height: 245px;
+  min-height: 200px;
   display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   align-content: start;
-  gap: 14px;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 14px;
   padding: 24px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #f6dd8157;
+  background: #f6dd8107;
+  border-top-right-radius: 4rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .coop-card span {
@@ -189,26 +197,30 @@ body.page-loader-content-hidden .modal {
   width: 42px;
   aspect-ratio: 1;
   border-radius: 14px;
-  background: var(--deep);
-  color: var(--white);
-  font-weight: 800;
+  background: #f5cb57;
+  color: var(--cream);
+  font-weight: 700;
 }
 
 .coop-card h3 {
   margin: 0;
+  color: #6d571a;
 }
 
 .coop-card p {
+  grid-column: 1 / -1;
   margin: 0;
   line-height: 1.74;
+  color: #836b2a;
 }
 
 .coop-detail {
   position: relative;
   display: grid;
-  gap: 94px;
+  gap: 130px;
   margin-top: 0;
   padding-top: 34px;
+  max-width: 1295px;
 }
 
 /* .coop-project:first-child::before {
@@ -247,6 +259,19 @@ body.page-loader-content-hidden .modal {
   align-items: start;
 }
 
+.coop-project__number {
+  position: absolute;
+  left: 2.5%;
+  top: -60px;
+  color: var(--deep);
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  font-size: 250%;
+}
+
+
 .coop-project--left {
   justify-self: start;
   grid-template-columns: minmax(0, 1.32fr) minmax(234px, 0.68fr);
@@ -255,6 +280,10 @@ body.page-loader-content-hidden .modal {
 
 .coop-project--right {
   justify-self: end;
+}
+
+.coop-project--right > .coop-project__number:first-child {
+  left: 92%;
 }
 
 .coop-project:not(:last-child)::after {
@@ -295,15 +324,31 @@ body.page-loader-content-hidden .modal {
   box-shadow: var(--shadow);
 }
 
+.coop-panel h2{
+  font-size: clamp(25px, 3vw, 38px);
+}
+
+.coop-panel .eyebrow{
+  margin-top: 3%;
+  margin-left: 0;
+}
+
+.coop-panel strong{
+  margin: 2% 0;
+}
+
+.coop-panel .clean-list {
+  margin-top: 20px;
+}
+
 .coop-project__notes {
   grid-area: notes;
   align-self: start;
   min-height: clamp(170px, 18vw, 220px);
   padding: 15px 17px;
-}
-
-.coop-panel .clean-list {
-  margin-top: 20px;
+  background-color: #f9fffd25;
+  border: none;
+  margin-top: 4%;
 }
 
 .coop-project__notes .clean-list {
@@ -339,7 +384,7 @@ body.page-loader-content-hidden .modal {
   transition:
     box-shadow 0.24s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.24s cubic-bezier(0.22, 1, 0.36, 1);
-  margin-top: 8%;
+  margin-top: 7%;
 }
 
 .coop-media__link:hover {
@@ -377,7 +422,9 @@ body.page-loader-content-hidden .modal {
 
 .coop-media__hint {
   margin: 0;
-  color: var(--muted);
+  color: var(--line);
+  font-style: italic;
+  text-decoration: underline;
   line-height: 1.72;
 }
 
@@ -431,6 +478,10 @@ body.page-loader-content-hidden .modal {
   .coop-project {
     width: 100%;
     justify-self: stretch;
+  }
+
+  .coop-project__number {
+    top: -28px;
   }
 
   .coop-media__embed {
